@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-const Users = require('../models/usuario')
+const Admin = require('../models/admin')
 
 class Database {
     constructor() {
@@ -15,10 +15,10 @@ class Database {
             })
             .then(async(db) => {
                 console.log('Database connection successful')
-                var count = await Users.countDocuments().exec();
+                var count = await Admin.countDocuments().exec();
                 console.log(count);
                 if (count == 0) {
-                    Users.create({
+                    Admin.create({
                         name: "admin",
                         username: "test@test.com",
                         email: "test@test.com",
