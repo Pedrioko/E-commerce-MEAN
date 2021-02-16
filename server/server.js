@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + "/../public"));
+require('./routes/index')(app);
 
 
 app.get('*', function(req, res) {

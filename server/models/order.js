@@ -33,7 +33,10 @@ let orderSchema = new mongoose.Schema({
         ref: 'Shipping',
         autopopulate: true
     },
-    total
+    total: {
+        type: Number,
+        default: 0
+    }
 }, schemaOptions)
 
 orderSchema.plugin(require('mongoose-autopopulate'));
